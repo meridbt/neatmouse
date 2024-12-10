@@ -23,9 +23,10 @@ public:
 	MouseParams();
 	explicit MouseParams(const std::wstring & name);
 
-	LONG delta  = 20;
+	LONG delta  = 18;
 	LONG adelta = 1;
-	std::vector<int> accelerationCurve = { 10, 20, 30, 50, 70, 90 };
+	std::vector<int> accelerationCurve = { /*01, 02, 03, 04,*/ 05, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95};
+	// int accelerationTime = 1;
 
 	KeyboardUtils::VirtualKey_t VKEnabler         = VK_SCROLL;
 	KeyboardUtils::VirtualKey_t VKMoveUp          = VK_NUMPAD8;
@@ -34,21 +35,21 @@ public:
 	KeyboardUtils::VirtualKey_t VKMoveRight       = VK_NUMPAD6;
 	KeyboardUtils::VirtualKey_t VKMoveLeftUp      = VK_NUMPAD7;
 	KeyboardUtils::VirtualKey_t VKMoveRightUp     = VK_NUMPAD9;
-	KeyboardUtils::VirtualKey_t VKMoveLeftDown    = VK_NUMPAD1;
+	KeyboardUtils::VirtualKey_t VKMoveLeftDown    = kVKNone;
 	KeyboardUtils::VirtualKey_t VKMoveRightDown   = VK_NUMPAD3;
 	KeyboardUtils::VirtualKey_t VKAccelerated     = kVKNone;
-	KeyboardUtils::VirtualKey_t VKPressLB         = VK_NUMPAD0;
-	KeyboardUtils::VirtualKey_t VKPressRB         = VK_NUMPADENTER;
+	KeyboardUtils::VirtualKey_t VKPressLB         = VK_NUMPAD1;
+	KeyboardUtils::VirtualKey_t VKPressRB         = VK_NUMPAD0;
 	KeyboardUtils::VirtualKey_t VKPressMB         = VK_NUMPAD5;
-	KeyboardUtils::VirtualKey_t VKWheelUp         = -VK_DIVIDE;
-	KeyboardUtils::VirtualKey_t VKWheelDown       = VK_MULTIPLY;
+	KeyboardUtils::VirtualKey_t VKWheelUp         = VK_ADD;
+	KeyboardUtils::VirtualKey_t VKWheelDown       = VK_NUMPADENTER;
 	KeyboardUtils::VirtualKey_t VKActivationMod   = kVKNone;
 	KeyboardUtils::VirtualKey_t VKStickyKey       = kVKNone;
 
 	UINT modHotkey = VK_F10;
 	UINT VKHotkey  = MOD_CONTROL | MOD_ALT;
 
-	bool activateOnStartup = false;
+	bool activateOnStartup = true;
 	bool minimizeOnStartup = false;
 	bool changeCursor      = false;
 	bool showNotifications = true;

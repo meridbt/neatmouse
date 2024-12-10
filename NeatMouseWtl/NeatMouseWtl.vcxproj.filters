@@ -5,10 +5,6 @@
       <UniqueIdentifier>{cc16c37c-1140-4bae-9986-3f472ee3fb93}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{72fd1e2b-ad29-4220-9961-59e1be7fa69e}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{ac273f53-8dd1-4163-be4d-508e6a32c244}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;manifest</Extensions>
@@ -36,6 +32,10 @@
     </Filter>
     <Filter Include="neatcommon\system">
       <UniqueIdentifier>{25c01df2-17c2-479e-a161-ba2346fd69d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header_Files">
+      <UniqueIdentifier>{72fd1e2b-ad29-4220-9961-59e1be7fa69e}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -111,25 +111,25 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header_Files</Filter>
     </ClInclude>
     <ClInclude Include="MainFrm.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header_Files</Filter>
     </ClInclude>
     <ClInclude Include="NeatMouseWtlView.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header_Files</Filter>
     </ClInclude>
     <ClInclude Include="AboutDlg.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header_Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header_Files</Filter>
     </ClInclude>
     <ClInclude Include="NeatToolbar.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header_Files</Filter>
     </ClInclude>
     <ClInclude Include="CursorOverlay.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header_Files</Filter>
     </ClInclude>
     <ClInclude Include="neatcommon\include\neatcommon\system\AutorunManager.h">
       <Filter>neatcommon\system</Filter>
@@ -186,7 +186,7 @@
       <Filter>logic</Filter>
     </ClInclude>
     <ClInclude Include="EmulationNotifier.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header_Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -44,27 +44,28 @@ bool MouseParams::Save(const std::wstring & fileName)
 	mif.writeIntValue(L"General", L"Delta", this->delta);
 	mif.writeIntValue(L"General", L"ADelta", this->adelta);
 	mif.writeIntVector(L"General", L"AccelerationCurve", this->accelerationCurve);
+//	mif.writeIntValue(L"General", L"AccelerationTime", this->accelerationTime);
 
 	mif.writeIntValue(L"General", L"VKEnabler", this->VKEnabler);
 	mif.writeIntValue(L"General", L"VKAccelerated", this->VKAccelerated);
 
-	mif.writeIntValue(L"General", L"VK_MoveUp", this->VKMoveUp);
-	mif.writeIntValue(L"General", L"VK_MoveDown", this->VKMoveDown);
-	mif.writeIntValue(L"General", L"VK_MoveLeft", this->VKMoveLeft);
-	mif.writeIntValue(L"General", L"VK_MoveRight", this->VKMoveRight);
+	mif.writeIntValue(L"KeyBinding", L"VK_MoveUp", this->VKMoveUp);
+	mif.writeIntValue(L"KeyBinding", L"VK_MoveDown", this->VKMoveDown);
+	mif.writeIntValue(L"KeyBinding", L"VK_MoveLeft", this->VKMoveLeft);
+	mif.writeIntValue(L"KeyBinding", L"VK_MoveRight", this->VKMoveRight);
 
-	mif.writeIntValue(L"General", L"VK_MoveLeftUp", this->VKMoveLeftUp);
-	mif.writeIntValue(L"General", L"VK_MoveRightUp", this->VKMoveRightUp);
-	mif.writeIntValue(L"General", L"VK_MoveLeftDown", this->VKMoveLeftDown);
-	mif.writeIntValue(L"General", L"VK_MoveRightDown", this->VKMoveRightDown);
+	mif.writeIntValue(L"KeyBinding", L"VK_MoveLeftUp", this->VKMoveLeftUp);
+	mif.writeIntValue(L"KeyBinding", L"VK_MoveRightUp", this->VKMoveRightUp);
+	mif.writeIntValue(L"KeyBinding", L"VK_MoveLeftDown", this->VKMoveLeftDown);
+	mif.writeIntValue(L"KeyBinding", L"VK_MoveRightDown", this->VKMoveRightDown);
 
-	mif.writeIntValue(L"General", L"VK_PressLB", this->VKPressLB);
-	mif.writeIntValue(L"General", L"VK_PressRB", this->VKPressRB);
-	mif.writeIntValue(L"General", L"VK_PressMB", this->VKPressMB);
-	mif.writeIntValue(L"General", L"VK_WheelUp", this->VKWheelUp);
-	mif.writeIntValue(L"General", L"VK_WheelDown", this->VKWheelDown);
+	mif.writeIntValue(L"KeyBinding", L"VK_PressLB", this->VKPressLB);
+	mif.writeIntValue(L"KeyBinding", L"VK_PressRB", this->VKPressRB);
+	mif.writeIntValue(L"KeyBinding", L"VK_PressMB", this->VKPressMB);
+	mif.writeIntValue(L"KeyBinding", L"VK_WheelUp", this->VKWheelUp);
+	mif.writeIntValue(L"KeyBinding", L"VK_WheelDown", this->VKWheelDown);
 
-	mif.writeUIntValue(L"General", L"VK_Hotkey", this->VKHotkey);
+	mif.writeUIntValue(L"KeyBinding", L"VK_Hotkey", this->VKHotkey);
 	mif.writeUIntValue(L"General", L"ModHotkey", this->modHotkey);
 
 	mif.writeStringValue(L"General", L"Name", this->m_name);
@@ -92,27 +93,28 @@ bool MouseParams::Load(const std::wstring & fileName)
 	this->delta = mif.readIntValue(L"General", L"Delta", 20);
 	this->adelta = mif.readIntValue(L"General", L"ADelta", 1);
 	this->accelerationCurve = mif.readIntVector(L"General", L"AccelerationCurve", { 100 });
+//	this->accelerationTime = mif.readIntValue(L"General", L"AccelerationTime", 1);
 
 	this->VKEnabler = mif.readIntValue(L"General", L"VKEnabler", VK_SCROLL);
 	this->VKAccelerated = mif.readIntValue(L"General", L"VKAccelerated", kVKNone);
 
-	this->VKMoveUp = mif.readIntValue(L"General", L"VK_MoveUp", VK_NUMPAD8);
-	this->VKMoveDown = mif.readIntValue(L"General", L"VK_MoveDown", VK_NUMPAD2);
-	this->VKMoveLeft = mif.readIntValue(L"General", L"VK_MoveLeft", VK_NUMPAD4);
-	this->VKMoveRight = mif.readIntValue(L"General", L"VK_MoveRight", VK_NUMPAD6);
+	this->VKMoveUp = mif.readIntValue(L"KeyBinding", L"VK_MoveUp", VK_NUMPAD8);
+	this->VKMoveDown = mif.readIntValue(L"KeyBinding", L"VK_MoveDown", VK_NUMPAD2);
+	this->VKMoveLeft = mif.readIntValue(L"KeyBinding", L"VK_MoveLeft", VK_NUMPAD4);
+	this->VKMoveRight = mif.readIntValue(L"KeyBinding", L"VK_MoveRight", VK_NUMPAD6);
 
-	this->VKMoveLeftUp = mif.readIntValue(L"General", L"VK_MoveLeftUp", VK_NUMPAD7);
-	this->VKMoveRightUp = mif.readIntValue(L"General", L"VK_MoveRightUp", VK_NUMPAD9);
-	this->VKMoveLeftDown = mif.readIntValue(L"General", L"VK_MoveLeftDown", VK_NUMPAD1);
-	this->VKMoveRightDown = mif.readIntValue(L"General", L"VK_MoveRightDown", VK_NUMPAD3);
+	this->VKMoveLeftUp = mif.readIntValue(L"KeyBinding", L"VK_MoveLeftUp", VK_NUMPAD7);
+	this->VKMoveRightUp = mif.readIntValue(L"KeyBinding", L"VK_MoveRightUp", VK_NUMPAD9);
+	this->VKMoveLeftDown = mif.readIntValue(L"KeyBinding", L"VK_MoveLeftDown", VK_NUMPAD1);
+	this->VKMoveRightDown = mif.readIntValue(L"KeyBinding", L"VK_MoveRightDown", VK_NUMPAD3);
 
-	this->VKPressLB = mif.readIntValue(L"General", L"VK_PressLB", VK_NUMPAD0);
-	this->VKPressRB = mif.readIntValue(L"General", L"VK_PressRB", VK_NUMPADENTER);
-	this->VKPressMB = mif.readIntValue(L"General", L"VK_PressMB", VK_NUMPAD5);
-	this->VKWheelUp = mif.readIntValue(L"General", L"VK_WheelUp", -VK_DIVIDE);
-	this->VKWheelDown = mif.readIntValue(L"General", L"VK_WheelDown", VK_MULTIPLY);
+	this->VKPressLB = mif.readIntValue(L"KeyBinding", L"VK_PressLB", VK_NUMPAD0);
+	this->VKPressRB = mif.readIntValue(L"KeyBinding", L"VK_PressRB", VK_NUMPADENTER);
+	this->VKPressMB = mif.readIntValue(L"KeyBinding", L"VK_PressMB", VK_NUMPAD5);
+	this->VKWheelUp = mif.readIntValue(L"KeyBinding", L"VK_WheelUp", -VK_DIVIDE);
+	this->VKWheelDown = mif.readIntValue(L"KeyBinding", L"VK_WheelDown", VK_MULTIPLY);
 
-	this->VKHotkey = mif.readUIntValue(L"General", L"VK_Hotkey", VK_F10);
+	this->VKHotkey = mif.readUIntValue(L"KeyBinding", L"VK_Hotkey", VK_F10);
 	this->modHotkey = mif.readUIntValue(L"General", L"ModHotkey", MOD_CONTROL | MOD_ALT);
 
 	this->m_name = mif.readStringValue(L"General", L"Name", L"[Untitled]");

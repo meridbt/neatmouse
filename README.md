@@ -1,3 +1,5 @@
+This is a fork of [NeatMouse by ](https://github.com/meridbt/neatmouse)
+
 # NeatMouse
 Keyboard-based mouse emulator for Windows operating systems.
 

@@ -213,11 +213,11 @@ MouseActioner::processAction(const KBDLLHOOKSTRUCT & event, bool isKeyUp)
 	const KeyboardButtonsStatus oldStatus = _keyboardStatus;
 	const bool result = isKeyUp ? processKeyUp(vk) : processKeyDown(vk);
 
-	// figure out the movement vector	
+	// figure out the movement vector.  (Rus: определите вектор движения.)	
 	const LONG d = _isAlternativeSpeedButtonPressed
 		? _mouseParams.adelta 
 		: _keyboardStatus.moveStepCount < _mouseParams.accelerationCurve.size() 
-			? _mouseParams.accelerationCurve[_keyboardStatus.moveStepCount++] * _mouseParams.delta / 100 
+			? _mouseParams.accelerationCurve[_keyboardStatus.moveStepCount++] * _mouseParams.delta / 100
 			: _mouseParams.delta;
 	const LONG dx =
 		((_keyboardStatus.isLeftPressed || _keyboardStatus.isLeftUpPressed || _keyboardStatus.isLeftDownPressed) ? - d : 0) +
